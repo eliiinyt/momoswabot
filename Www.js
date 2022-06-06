@@ -13,7 +13,8 @@ ctx.beginPath()
 ctx.lineTo(50, 102)
 ctx.lineTo(50 + text.width, 102)
 ctx.stroke()
-console.log('<img src="' + canvas.toDataURL() + '" />')
+//console.log('<img src="' + canvas.toDataURL() + '" />')
+conn.sendFile(m.chat, canvas, '', '', m);
 }
 handler.command = /^(canvastest)$/i
 module.exports = handler
