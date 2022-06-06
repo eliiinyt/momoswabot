@@ -6,9 +6,9 @@ const canvas = createCanvas(200, 200)
 const ctx = canvas.getContext('2d')
 ctx.lineWidth = 5;
 // Color de línea
-ctx.strokeStyle = "#ffffff";
+ctx.strokeStyle = "#000000";
 // Color de relleno
-ctx.fillStyle = "#F4511E";
+ctx.fillStyle = "#ffffff";
 // Dibujamos un rectángulo con lados iguales
 ctx.rect(5, 5, 200, 200);
 // Hacemos que se dibuje
