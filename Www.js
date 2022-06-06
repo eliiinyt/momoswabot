@@ -4,6 +4,17 @@ const fs = require("fs");
 let handler = async(m, { conn, args, usedPrefix }) => {
 const canvas = createCanvas(200, 200)
 const ctx = canvas.getContext('2d')
+ctx.lineWidth = 5;
+// Color de línea
+ctx.strokeStyle = "#212121";
+// Color de relleno
+ctx.fillStyle = "#F4511E";
+// Dibujamos un rectángulo con lados iguales
+ctx.rect(5, 5, 100, 100);
+// Hacemos que se dibuje
+ctx.stroke();
+// Lo rellenamos
+ctx.fill();
 // Write "Awesome!"
 ctx.font = '30px Impact'
 ctx.rotate(0.1)
