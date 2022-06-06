@@ -1,4 +1,5 @@
-const { createCanvas, loadImage } = require('canvas')
+let handler = async(m, { conn, args, usedPrefix }) => {
+  const { createCanvas, loadImage } = require('canvas')
 const canvas = createCanvas(200, 200)
 const ctx = canvas.getContext('2d')
 // Write "Awesome!"
@@ -13,3 +14,6 @@ ctx.lineTo(50, 102)
 ctx.lineTo(50 + text.width, 102)
 ctx.stroke()
 console.log('<img src="' + canvas.toDataURL() + '" />')
+}
+handler.command = /^(canvastest)$/i
+module.exports = handler
