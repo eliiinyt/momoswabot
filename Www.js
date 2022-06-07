@@ -4,8 +4,10 @@ const fs = require("fs");
 let handler = async(m, { conn, args, usedPrefix }) => {
 // Write "Awesome!"
 // Draw line under text
- const canvas = createCanvas(300, 300)
+ const canvas = createCanvas(600, 600)
 const ctx = canvas.getContext('2d')
+ctx.fillStyle = "#ffffff";
+ctx.fillRect(0,600,600,600)
 //Asigno a una variable el elemento del html que voy a usar
  //Alisto el canvas para que funcione
   ctx.lineWidth=1; //Defino el ancho de la linea en pixeles
