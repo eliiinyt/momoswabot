@@ -4,7 +4,6 @@ const fs = require("fs");
 let handler = async(m, { conn, args, usedPrefix }) => {
 // Write "Awesome!"
 // Draw line under text
-function ejercicio1(){
  const canvas = createCanvas(300, 300)
 const ctx = canvas.getContext('2d')
 //Asigno a una variable el elemento del html que voy a usar
@@ -24,7 +23,6 @@ const ctx = canvas.getContext('2d')
   ctx.lineTo(300,150);// trazo la linea hasta este punto
   ctx.stroke();// levanto el lápiz
   ctx.closePath();// me alisto para realizar otra parte del dibujo
- }
 conn.sendFile(m.chat, canvas.toDataURL(), '', '', m);
 }
 handler.command = /^(canvastest)$/i
