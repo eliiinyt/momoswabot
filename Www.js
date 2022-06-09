@@ -1,17 +1,14 @@
-const { createCanvas, loadImage } = require('canvas')
-let handler = async (m) => {
-  let img1 = await fetch('https://telegra.ph/file/988bf42ae67248d8c5a9d.jpg')
-  let q = m.quoted ? m.quoted : m
-  let mime = (q.msg || q).mimetype || '';
-  if (!mime) throw '¿y la imágen?';
-  let media = await q.download();
-  let isImg = /image\/(png|jpe?g|gif)/.test(mime);
-const canvas = createCanvas(1200, 1200);
-const ctx = canvas.getContext('2d');
-var img = new Image();
-img.src = img1;
-ctx.drawImage(img, 0, 0, 200, 1200);
-conn.sendFile(m.chat, canvas.toDataURL(), '', '', m);
-}
-handler.command = /^(canvastest)$/i
 module.exports = handler
+let fetch = require('node-fetch');
+let handler = async(m, { conn, usedPrefix, command }) => {
+  let res = await fetch('https://api.waifu.pics/sfw/waifu');
+  if (!res.ok) throw await res.text();
+  let json = await res.json();
+  if (!json.url) throw 'Ups, un error!';
+  conn.send2ButtonImg(m.chat, json.url, '¿qué tal?', 'sexo', '¿Otra?', `${usedPrefix + command}`, '¿nsfw?', `${usedPrefix}nsfw`, m);
+};
+handler.help = ['waifu'];
+handler.tags = ['internet'];
+handler.command = /^(waifu)$/i;
+module.exports = handler;
+
