@@ -1,38 +1,104 @@
+
+let fs = require('fs')
+let fetch = require('node-fetch')
 let { MessageType } = require('@adiwajshing/baileys')
-let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-
-const sections = [
-    {
-	title: "Section 1",
-	rows: [
-	    {title: "Option 1", rowId: "option1"},
-	    {title: "Option 2", rowId: "option2", description: "This is a description"}
-	]
-    },
-   {
-	title: "Section 2",
-	rows: [
-	    {title: "Option 3", rowId: "option3"},
-	    {title: "Option 4", rowId: "option4", description: "This is a description V2"}
-	]
-    },
+let handler = async (m, { conn, participants, args }) => {
+let vn = './media/menu.mp3'
+const rows = [
+//LO QUE SE MUESTRA + DESCRIPCION + COMANDO 
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
+{title: 'MENU', description: "Te manda el menu del Bot", rowId:"/menu"},
 ]
-
-const listMessage = {
-  text: "This is a list",
-  footer: "nice footer, link: https://google.com",
-  title: "Amazing boldfaced list title",
-  buttonText: "Required, text on the button to view the list",
-  sections
-};
-sock.sendMessage(id, listMessage)
-const reactionMessage = {
-    react: {
-        text: "💖",
-        key: message.key
-    }
+const sections = [{title: "ELIGE UNA OPCIÓN", rows: rows}]
+const button = {
+buttonText: 'SELECCIONE UNA OPCIÓN',
+description: "NOMBRE DEL BOT\nY/O LA INFORMACIÓN QUE QUIERA AGREGAR\n\n*THE SHADOW BROKERS - BOT*",
+sections: sections,
+listType: 1
+//NOTA: PARA HACER UN SALTO DE LINEA DE USA \n 
+//NOTA 2: EL COMANDO PARA PEDIR ESTE MENU ES #wamenu
+//NOTA 3: PARA ACTIVAR ESTE COMANDO DEBES ELIMINAR LOS /* DEL INICIO Y EL */ /* DEL FINAL DE ESTE CODIGO
+}  
+conn.sendMessage(m.chat, button, MessageType.listMessage)
+await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
 }
-sock.sendMessage(id, reactionMessage)
-}
-handler.command = /^jadibot$/i
+handler.command = /^wamenu$/i
+handler.fail = null
 module.exports = handler
