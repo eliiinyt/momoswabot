@@ -1,18 +1,18 @@
-let handler = async (m, { conn, args }) => {
- 
-if (random(0, 6) == 1) {
-  let ownerGroup = m.chat.split`-`[0] + '@s.whatsapp.net'
-  
-  let users = m.mentionedJid.filter(u => !(u == ownerGroup || u.includes(conn.user.jid)))
+let nombre, lugar, valor;
+console.log("el premio de concurso de mascotas\n")
+console.log("introduce el nombre de tu mascota: \n")
+nombre = prompt("nombre")
+console.log("introduce el lugar del concurso en el que quedó: \n")
+lugar = prompt("lugar")
+console.log("introduce el valor de tu mascota: \n")
+valor = prompt("valor")
 
-  for (let user of users) if (user.endsWith('@s.whatsapp.net')) await conn.groupParticipantsUpdate(m.chat, [user], "perdió la vida")
-m.reply(m.chat, 'pendejo perdió la ruleta', m)
-  
+if (lugar==1) {
+console.log(`el premio de 1 lugar de ${nombre} es ${valor +2000}`)
+} else if (lugar==2) {
+console.log(`el premio de 2 lugar de ${nombre} es ${valor + 1500}`)
+} else if (lugar==3) {
+console.log(`el premio de 3 lugar de ${nombre} es ${valor + 600}`)
+} else {
+console.log("no hay premio para tu puesto")
 }
-function random(min, max) {
-    return Math.floor((Math.random() * (max - min + 1)) + min);
-}
-handler.help = ['numran <Numero1 Numero2>'];
-handler.command = /^(ruleta rusa)$/i;
-handler.tags = ['main'];
-module.exports = handler
