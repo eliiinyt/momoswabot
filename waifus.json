@@ -1,0 +1,129 @@
+{
+  "common": [
+    {
+        "Nombre":"Honami Ichinose",
+        "Img":"https://telegra.ph/file/377eb1698858d71f89e9f.png",
+        "rareza": 3,
+        "poder": 1200,
+        "source": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+  },
+  {
+    "Nombre":"Maya Satou",
+    "Img":"https://telegra.ph/file/0f7c225466fcd42769302.jpg",
+    "rareza": 3,
+    "poder": 800,
+    "source": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+
+  }, 
+  {
+    "Nombre": "Luna",
+    "Img":"https://telegra.ph/file/6b8a3d49b87be7ef21ae0.jpg",
+    "rareza": 3,
+    "poder": 800,
+    "source": "Kono Subarashii Sekai ni Shukufuku wo!"
+  },
+  {
+    "Nombre": "Elma",
+    "Img": "https://telegra.ph/file/4afa4a03eac297a857f05.jpg", 
+    "rareza": 3,
+    "poder": 800,
+    "source": "Ishuzoku Reviewers"
+  },
+  {
+    "Nombre": "Ruri",
+    "Img": "https://telegra.ph/file/f9f19112759250f5269ea.jpg",
+    "rareza": 3,
+    "poder": 970,
+    "source": "Dr. Stone"
+  }
+
+
+
+  ],
+
+  "epic": [
+    {
+        "Nombre": "Arisu Sakayanagi",
+        "Img": "https://telegra.ph/file/93c9d490850fa2031e323.png",
+        "rareza": 4,
+        "poder": 5000,
+        "source": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+    },
+
+
+    {
+        "Nombre":"Kakeru Ryuuen",
+        "Img":"https://telegra.ph/file/efcd2e42a56c4afa4d003.png",
+        "rareza": 4,
+        "poder": 4500,
+        "source": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+    },
+    {
+        "Nombre":"Karuizawa Kei",
+        "Img":"https://telegra.ph/file/1ae8770160053bec0c4a9.png",
+        "rareza": 4,
+        "poder": 4000,
+        "source": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+    },
+    {
+      "Nombre": "Noelle",
+      "Img": "https://telegra.ph/file/27b2a438d9a7e90a9e0e5.jpg",
+      "rareza": 4,
+      "poder": 4500,
+      "source": "Genshin Impact"
+    },
+    {
+      "Nombre": "Yanfei",
+      "Img": "https://telegra.ph/file/df57bc985504b03408f1a.jpg",
+      "rareza": 5,
+      "poder": 4500,
+      "source": "Genshin Impact"
+    }
+  ],
+
+  "legendary": [
+
+    {
+        "Nombre": "Horikita Suzune",
+        "Img": "https://telegra.ph/file/352c46a22055221dc26f1.png",
+        "rareza": 5,
+        "poder": 7800,
+        "source":"Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+    },
+    {
+      "Nombre": "Mona",
+      "Img": "https://telegra.ph/file/cea687679ffee6b06532a.jpg",
+      "rareza": 5,
+      "poder": 10000,
+      "source": "Genshin Impact"
+    },
+    {
+      "Nombre": "Diluc",
+      "Img": "https://telegra.ph/file/090a23ec0f19c325041d0.jpg",
+      "rareza": 5,
+      "poder": 8999,
+      "source": "Genshin Impact"
+    },
+    {
+      "Nombre": "Ayanokouji Kiyotaka",
+      "Img": "https://telegra.ph/file/27397591ee26718e2608a.png",
+      "rareza": 5,
+      "poder": 10000,
+      "source": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e"
+    },
+    {
+        "Nombre": "Mai Sakurajima",
+        "Img": "https://telegra.ph/file/2ae9cbf64cd0cedaa3d00.png",
+        "rareza": 5,
+        "poder": 10000,
+        "Source": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai"
+    },
+    {
+        "Nombre": "Fischl von Luftschloss Narfidort Amy",
+        "Img": "https://telegra.ph/file/133c3ccffbc0b56d0f974.jpg",
+        "rareza": "Especial 👀",
+        "poder": 10000,
+        "source": "Genshin Impact"
+    }
+  ]
+}
